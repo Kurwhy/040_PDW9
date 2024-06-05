@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Warnet POPCHI - Cafe</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <style>
+    body {
+      background-image: url('images/1212.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color: #fff;
+      margin-bottom: 70px;
+    }
+    .navbar {
+      background-color: #343a40 !important;
+    }
+    .navbar-brand {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #fff;
+    }
+    .nav-link {
+      font-size: 1.2rem;
+    }
+    .jumbotron {
+      background-color: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      padding: 100px 0;
+      text-align: center;
+    }
+    .card {
+      margin-bottom: 30px;
+      border: none;
+      background-color: transparent;
+    }
+    .card-header {
+      background-color: #343a40;
+      color: #fff;
+      font-weight: bold;
+      text-align: center;
+    }
+    .card-body {
+      background-color: rgba(255, 255, 255, 0.9);
+      color: #000;
+    }
+    .about {
+      margin-top: 30px;
+      padding: 30px;
+      background-color: rgba(255, 255, 255, 0.3);
+      border-radius: 10px;
+    }
+    .footer {
+      background-color: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      padding: 8px 0;
+      text-align: center;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+    .menu-list {
+      list-style: none;
+      padding: 0;
+    }
+    .menu-item {
+      display: flex;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid #ddd;
+    }
+    .menu-item img {
+      width: 150px;
+      height: 150px;
+      margin-right: 10px;
+    }
+    .menu-item .price {
+      margin-left: auto;
+      font-weight: bold;
+    }
+  </style>
+  <script>
+    function filterMenu(category) {
+      var allItems = document.querySelectorAll('.menu-item');
+      allItems.forEach(function(item) {
+        if (category === 'all') {
+          item.style.display = 'flex';
+        } else {
+          item.style.display = item.classList.contains(category) ? 'flex' : 'none';
+        }
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      filterMenu('all'); // Show all items by default
+    });
+  </script>
+</head>
+<body>
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">Warnet POPCHI</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mynavbar">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Beranda</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="cabang.html">Cabang</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="spek.html">Spesifikasi PC</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="cafe.html">Cafe</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>    
+
+  <div class="jumbotron">
+    <div class="container">
+      <h1 class="display-4">Cafe Warnet POPCHI</h1>
+    </div>
+  </div>
+
+  <div class="container about">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <h6>Cafe Warnet POPCHI menawarkan berbagai macam makanan dan minuman yang lezat untuk menemani waktu bermain game Anda. Kami menyediakan lingkungan yang nyaman dan menyenangkan untuk bersantai.</h6>
+      </div>
+    </div>
+  </div>
+
+  <div class="container text-center">
+    <button class="btn btn-primary m-2" onclick="filterMenu('all')">Semua</button>
+    <button class="btn btn-primary m-2" onclick="filterMenu('food')">Makanan</button>
+    <button class="btn btn-primary m-2" onclick="filterMenu('drink')">Minuman</button>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <div class="card">
+          <div class="card-header">
+            Menu Cafe Kami
+          </div>
+          <div class="card-body">
+            <h4>Menu Makanan dan Minuman</h4>
+            <ul class="menu-list">
+              <li class="menu-item food">
+                <img src="images/1d.jpg" alt="Sandwich">
+                Sandwich
+                <span class="price">Rp 30.000</span>
+              </li>
+              <li class="menu-item food">
+                <img src="images/2d.jpg" alt="Burger">
+                Burger
+                <span class="price">Rp 40.000</span>
+              </li>
+              <li class="menu-item food">
+                <img src="images/3d.jpg" alt="Fries">
+                Fries
+                <span class="price">Rp 15.000</span>
+              </li>
+              <li class="menu-item food">
+                <img src="images/4d.jpg" alt="Chocolate Cake">
+                Chocolate Cake
+                <span class="price">Rp 35.000</span>
+              </li>
+              <li class="menu-item food">
+                <img src="images/5d.jpg" alt="Ice Cream">
+                Ice Cream
+                <span class="price">Rp 20.000</span>
+              </li>
+              <li class="menu-item drink">
+                <img src="images/6d.jpg" alt="Espresso">
+                Espresso
+                <span class="price">Rp 20.000</span>
+              </li>
+              <li class="menu-item drink">
+                <img src="images/7d.jpg" alt="Latte">
+                Latte
+                <span class="price">Rp 25.000</span>
+              </li>
+              <li class="menu-item drink">
+                <img src="images/8d.jpg" alt="Americano">
+                Americano
+                <span class="price">Rp 20.000</span>
+              </li>
+              <li class="menu-item drink">
+                <img src="images/9d.jpg" alt="Milkshake">
+                Milkshake
+                <span class="price">Rp 25.000</span>
+              </li>
+              <li class="menu-item drink">
+                <img src="images/10d.jpg" alt="Green Tea Latte">
+                Green Tea Latte
+                <span class="price">Rp 25.000</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <h3>Kontak Kami</h3>
+          <p>Telepon: 09977890909</p>
+        </div>
+        <div class="col-lg-6">
+          <h3>Alamat</h3>
+          <p>Jl. Wates No. 2, Yogyakarta</p>
+        </div>
+        <div class="col-lg-12">
+          <p>&copy; 2024 Warnet POPCHI. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
